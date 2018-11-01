@@ -1,12 +1,15 @@
-﻿namespace SeriLoggerWithSeq
+﻿using System.Collections.Generic;
+
+namespace SeriLoggerWithSeq
 {
-    interface iSomeLogger
+    interface ISomeLogger
     {
         void Error(string msg);
         void Info(string msg);
+        void Info(string msg, Dictionary<string, string> props);
         void Warning(string msg);
     }
-    public class SomeLogger : iSomeLogger
+    public class SomeLogger : ISomeLogger
     {
         private Serilog.ILogger _logger;
         private string _name;
@@ -22,6 +25,10 @@
         public void Info(string msg)
         {
             _logger.Information(msg);
+        }
+        public void Info(string msg,Dictionary<string,string> props)
+        {
+            _logger.Information(msg, props);
         }
         public void Error(string msg)
         {

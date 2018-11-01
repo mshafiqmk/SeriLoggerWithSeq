@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Serilog;
 namespace SeriLoggerWithSeq
@@ -20,7 +21,10 @@ namespace SeriLoggerWithSeq
             };
             label1.Text = student.Name + " " + student.Age;
             var someLogger = new SomeLogger("ShafiqKhuidadAppLogger", Guid.NewGuid().ToString(), "LogInWindow");
-            someLogger.Info($"Info : Student Recored is added {student}");
+            var props = new Dictionary<string, string>();
+            props.Add("Name", student.Name);
+            props.Add("Age", student.Age);
+            someLogger.Info($"Info : Student Recored is added ",props);
         }
 
         private void Form1_Load(object sender, EventArgs e)
