@@ -2,20 +2,20 @@
 
 namespace SeriLoggerWithSeq
 {
-    interface ISomeLogger
+    interface IShafiqKhuidadAppLogger
     {
         void Error(string msg);
         void Info(string msg);
         void Info(string msg, Dictionary<string, string> props);
         void Warning(string msg);
     }
-    public class SomeLogger : ISomeLogger
+    public class ShafiqKhuidadAppLogger : IShafiqKhuidadAppLogger
     {
         private Serilog.ILogger _logger;
         private string _name;
         private string _activityId;
         private string logger;
-        public SomeLogger(string logger, string activityId, string name)
+        public ShafiqKhuidadAppLogger(string logger, string activityId, string name)
         {
             this._name = name;
             this._activityId = activityId;

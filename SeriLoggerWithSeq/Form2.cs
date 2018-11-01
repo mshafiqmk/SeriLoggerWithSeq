@@ -26,7 +26,7 @@ namespace SeriLoggerWithSeq
         private void buttonFindStudent_Click(object sender, EventArgs e)
         {
             var activityId = Guid.NewGuid().ToString();
-            var logger = new SomeLogger("ShafiqKhuidadAppLogger", activityId, "FindWindow");
+            var logger = new ShafiqKhuidadAppLogger("ShafiqKhuidadAppLogger", activityId, "FindWindow");
             var name  = textBoxName.Text;
             var count = StudentFackRepo.GetStudentList().Count(x => x.Name.Contains(name));
             if (count>0)

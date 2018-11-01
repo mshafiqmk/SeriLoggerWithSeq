@@ -20,7 +20,7 @@ namespace SeriLoggerWithSeq
                 Age = textBoxAge.Text
             };
             label1.Text = student.Name + " " + student.Age;
-            var someLogger = new SomeLogger("ShafiqKhuidadAppLogger", Guid.NewGuid().ToString(), "LogInWindow");
+            var someLogger = new ShafiqKhuidadAppLogger("ShafiqKhuidadAppLogger", Guid.NewGuid().ToString(), "LogInWindow");
             var props = new Dictionary<string, string>();
             props.Add("Name", student.Name);
             props.Add("Age", student.Age);
